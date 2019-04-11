@@ -10,24 +10,26 @@ namespace Assignment4
 {
     class Program
     {
-        ArrayList Beowulf;
+        ArrayList beowulf;
 
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.Beowulf = new ArrayList();
+            p.beowulf = new ArrayList();
+            p.Run();
         }
         public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
         {
-            using (StreamReader file = new StreamReader("U:/SIMER/beowulf.txt"))
+            using (var file = new StreamReader("U:/Users/726010/SIMER/beowulf.txt"))
             {
                 int counter = 0;
                 string ln;
                 while ((ln = file.ReadLine()) != null)
                 {
                     Console.WriteLine(ln);
-                    Beowulf.Add(ln);
+                    counter++;
+                    beowulf.Add(ln);
 
                 }
                 file.Close();
